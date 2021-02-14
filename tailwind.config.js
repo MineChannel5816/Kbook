@@ -26,6 +26,10 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      kbook: {
+        default: "#18191A",
+        default2: "#242526",
+      },
     },
     spacing: {
       px: "1px",
