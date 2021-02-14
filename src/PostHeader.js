@@ -9,7 +9,7 @@ function PostHeader(props) {
         className="rounded-full max-h-10"
       />
       <div className="containerInfoPostHeader flex flex-col ">
-        <div className="divNomePostHeader dark:text-white dark:text-opacity-70 font-bold mx-3">
+        <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
           <p>{props.nome}</p>
         </div>
         <div className="divTime flex text-gray-500 font-semibold">
