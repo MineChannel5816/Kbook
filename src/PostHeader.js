@@ -10,12 +10,12 @@ function PostHeader(props) {
       />
       <div className="containerInfoPostHeader flex flex-col">
         <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
-          <p>{props.nome}</p>
+          <p>{props.name}</p>
         </div>
         <div className="divTime flex text-gray-500 font-semibold">
-          <p className="ml-3 mx-1">{props.giorno}</p>
+          <p className="ml-3 mx-1">{props.date}</p>
           <p className="mx-1"> alle </p>
-          <p className="mx-1">{props.orario}</p>
+          <p className="mx-1">{props.clock}</p>
         </div>
       </div>
       <button className="flex-grow dark:text-white dark:text-opacity-70 mr-2">
