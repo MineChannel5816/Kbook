@@ -6,7 +6,7 @@ import PostComments from "./PostComments";
 import ImgProfilo from "./img/Profilo.png";
 function Post() {
   return (
-    <div className="Post max-w-5xl rounded-xl shadow-lg mb-5 bg-white dark:bg-kbook-default2">
+    <div className="Post max-w-3xl rounded-xl shadow-lg mb-5 bg-white dark:bg-kbook-default2">
       <PostHeader
         name="Pippo Baudo"
         clock="07:43"
@@ -23,7 +23,7 @@ function Post() {
         image="https://picsum.photos/1920/1080"
       ></PostBody>
 
-      <PostActionBar comments="5" like="3"></PostActionBar>
+      <PostActionBar comments="5" share="3" like="3"></PostActionBar>
       <PostComments />
     </div>
   );
