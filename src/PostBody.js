@@ -6,11 +6,6 @@ function PostBody(props) {
         {props.text}
       </p>
       <img className="p-0 max-w-5xl w-full object-cover" src={props.image} />
-      <div>
-        <p className="float-right flex-grow m-3 dark:text-white dark:text-opacity-75">
-          Commenti: {props.comments}
-        </p>
-      </div>
     </div>
   );
 }
