@@ -1,7 +1,7 @@
-import PostHeader from "./PostHeader.js";
-import PostBody from "./PostBody.js";
-import PostActionBar from "./PostActionBar.js";
-import PostComments from "./PostComments.js";
+import PostHeader from "./PostHeader";
+import PostBody from "./PostBody";
+import PostActionBar from "./PostActionBar";
+import PostComments from "./PostComments";
 
 import ImgProfilo from "./img/Profilo.png";
 function Post() {

@@ -1,5 +1,5 @@
-import PostPersonalComment from "./PostPersonalComment.js";
-import PostOtherComment from "./PostOtherComment.js";
+import PostPersonalComment from "./PostPersonalComment";
+import PostOtherComment from "./PostOtherComment";
 
 import ImgProfilo from "./img/Profilo.png";
 import ImgFriend from "./img/ProfiloFriend.png";
