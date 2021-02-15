@@ -1,5 +1,3 @@
-import * as Icons from "heroicons-react";
-
 function PostOtherComment(props) {
   return (
     <div className="divPostOtherComment flex items-start m-2 dark:text-white dark:text-opacity-80">
