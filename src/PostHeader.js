@@ -8,7 +8,7 @@ function PostHeader(props) {
         alt="imgProfile"
         className="rounded-full max-h-10"
       />
-      <div className="containerInfoPostHeader flex flex-col ">
+      <div className="containerInfoPostHeader flex flex-col">
         <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
           <p>{props.nome}</p>
         </div>

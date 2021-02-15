@@ -2,7 +2,7 @@ import * as Icons from "heroicons-react";
 
 function PostActionBar(props) {
   return (
-    <div className="divPostActionBar dark:text-white dark:text-opacity-75">
+    <div className="divPostActionBar dark:text-white text-black text-opacity-90 dark:text-opacity-75">
       <div className="containerContatori mx-4 flex items-center">
         <div className="flex-grow">
           <div className="flex">
@@ -15,7 +15,7 @@ function PostActionBar(props) {
           </p>
         </div>
       </div>
-      <hr className="mx-4" />
+      <hr className="mx-4 dark:opacity-20" />
       <div className="divActionBar flex justify-around mx-4 my-2 ">
         <button className="flex font-medium">
           <Icons.ThumbUpOutline className="mx-2" /> Mi Piace
@@ -24,7 +24,7 @@ function PostActionBar(props) {
           <Icons.UploadOutline className="mx-2" /> Condividi
         </button>
       </div>
-      <hr className="mx-4 p-1" />
+      <hr className="mx-4 p-1 dark:opacity-20" />
     </div>
   );
 }
