@@ -12,7 +12,7 @@ function PostHeader(props) {
         <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
           <p>{props.name}</p>
         </div>
-        <div className="divTime flex text-gray-500 font-semibold">
+        <div className="divTime flex text-gray-500 font-semibold -mt-1">
           <p className="ml-3 mx-1">{props.date}</p>
           <p className="mx-1"> alle </p>
           <p className="mx-1">{props.clock}</p>
