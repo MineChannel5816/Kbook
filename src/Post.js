@@ -1,5 +1,6 @@
 import PostHeader from "./PostHeader.js";
 import PostBody from "./PostBody.js";
+import PostActionBar from "./PostActionBar.js";
 
 import ImgProfilo from "./img/Profilo.png";
 function Post() {
@@ -12,7 +13,6 @@ function Post() {
         imgProfilo={ImgProfilo}
       ></PostHeader>
       <PostBody
-        comments="5"
         text="Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -24,6 +24,8 @@ function Post() {
         of Lorem Ipsum."
         image="https://picsum.photos/1920/1080"
       ></PostBody>
+
+      <PostActionBar comments="5" like="3"></PostActionBar>
     </div>
   );
 }
