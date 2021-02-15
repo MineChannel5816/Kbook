@@ -6,7 +6,7 @@ function PostHeader(props) {
       <img
         src={props.imgProfile}
         alt="imgProfile"
-        className="rounded-full max-h-10"
+        className="rounded-full max-h-10 border border-gray-300 hover:border-gray-500 hover:opacity-95"
       />
       <div className="containerInfoPostHeader flex flex-col">
         <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
@@ -19,7 +19,7 @@ function PostHeader(props) {
         </div>
       </div>
       <button className="flex-grow dark:text-white dark:text-opacity-70 mr-2">
-        <Icons.DotsHorizontalOutline className="float-right"></Icons.DotsHorizontalOutline>
+        <Icons.DotsHorizontalOutline className="float-right hover:bg-gray-100 rounded-full h-10 w-10 p-2"></Icons.DotsHorizontalOutline>
       </button>
     </div>
   );

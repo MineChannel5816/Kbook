@@ -5,7 +5,7 @@ function PostPersonalComment(props) {
       <img
         src={props.imgProfile}
         alt="imgProfileComment"
-        className="rounded-full max-h-10 ml-3"
+        className="rounded-full max-h-10 ml-3 border border-gray-300 hover:border-gray-400 hover:opacity-95"
       />
       <div className="flex-grow">
         <div className="divPersonalComment flex rounded-full bg-gray-100 dark:bg-gray-400 dark:bg-opacity-20 p-2 m-2 ml-4">

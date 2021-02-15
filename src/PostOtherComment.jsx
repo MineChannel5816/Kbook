@@ -4,7 +4,7 @@ function PostOtherComment(props) {
       <img
         src={props.imgProfile}
         alt="imgProfileComment"
-        className="rounded-full max-h-10 ml-2 mt-2"
+        className="rounded-full max-h-10 ml-2 mt-2 border border-gray-300 hover:border-gray-500 hover:opacity-95"
       />
       <div className="flex flex-col">
         <div className="divComment flex flex-col rounded-3xl bg-gray-100 dark:bg-gray-400 dark:bg-opacity-20 p-2 px-4 m-2 mb-0 ml-3">
