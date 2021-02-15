@@ -5,13 +5,16 @@ function PostActionBar(props) {
     <div className="divPostActionBar dark:text-white text-black text-opacity-80 dark:text-opacity-75">
       <div className="containerContatori mx-4 flex items-center">
         <div className="flex-grow">
-          <div className="flex">
+          <div className="flex cursor-pointer hover:underline">
             <Icons.ThumbUpOutline /> {props.like}
           </div>
         </div>
         <div>
-          <p className="float-right m-3 text-black dark:text-white text-opacity-90 dark:text-opacity-90">
+          <p className="float-right m-3 text-black dark:text-white text-opacity-90 dark:text-opacity-90 cursor-pointer hover:underline">
             Commenti: {props.comments}
+          </p>
+          <p className="float-right m-3 text-black dark:text-white text-opacity-90 dark:text-opacity-90 cursor-pointer hover:underline">
+            Condivisioni: {props.share}
           </p>
         </div>
       </div>
