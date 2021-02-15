@@ -4,7 +4,7 @@ function PostHeader(props) {
   return (
     <div className="divPostHeader flex items-center p-4 max-h-16">
       <img
-        src={props.imgProfilo}
+        src={props.imgProfile}
         alt="imgProfile"
         className="rounded-full max-h-10"
       />
