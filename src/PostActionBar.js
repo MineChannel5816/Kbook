@@ -10,7 +10,7 @@ function PostActionBar(props) {
           </div>
         </div>
         <div>
-          <p className="float-right m-3 dark:text-white ">
+          <p className="float-right m-3 text-black dark:text-white text-opacity-90 dark:text-opacity-90">
             Commenti: {props.comments}
           </p>
         </div>
