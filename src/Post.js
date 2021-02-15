@@ -24,7 +24,7 @@ function Post() {
       ></PostBody>
 
       <PostActionBar comments="5" like="3"></PostActionBar>
-      <PostComments></PostComments>
+      <PostComments />
     </div>
   );
 }
