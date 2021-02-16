@@ -6,7 +6,7 @@ function PostBody(props) {
         {props.text}
       </p>
       <img
-        className="p-0 max-w-5xl w-full object-cover cursor-pointer"
+        className="p-0 max-w-5xl w-full object-cover cursor-pointer active:opacity-95"
         src={props.image}
       />
     </div>
