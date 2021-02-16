@@ -15,13 +15,13 @@ function PostPersonalComment(props) {
             placeholder="Scrivi un commento publico..."
           ></input>
           <button className="text-gray-400 mx-1 focus:outline-none ">
-            <Icons.EmojiHappyOutline className="hover:bg-gray-200 dark:hover:bg-kbook-default2 h-8 w-8 rounded-full p-1" />
+            <Icons.EmojiHappyOutline className="hover:bg-gray-200 dark:hover:bg-kbook-default2 h-8 w-8 rounded-full p-1 transform active:scale-95 active:text-blue-600" />
           </button>
           <button className="text-gray-400 mx-1 focus:outline-none">
-            <Icons.CameraOutline className="hover:bg-gray-200 dark:hover:bg-kbook-default2 h-8 w-8 rounded-full p-1" />
+            <Icons.CameraOutline className="hover:bg-gray-200 dark:hover:bg-kbook-default2 h-8 w-8 rounded-full p-1 transform active:scale-95 active:text-blue-600" />
           </button>
           <button className="text-gray-400 mx-1 focus:outline-none">
-            <Icons.PlusCircleOutline className="hover:bg-gray-200 dark:hover:bg-kbook-default2 h-8 w-8 rounded-full p-1" />
+            <Icons.PlusCircleOutline className="hover:bg-gray-200 dark:hover:bg-kbook-default2 h-8 w-8 rounded-full p-1 transform active:scale-95 active:text-blue-600" />
           </button>
         </div>
       </div>

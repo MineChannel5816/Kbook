@@ -22,7 +22,6 @@ function Post() {
         essentially unchanged."
         image="https://picsum.photos/1920/1080"
       ></PostBody>
-
       <PostActionBar comments="5" share="3" like="3"></PostActionBar>
       <PostComments />
     </div>
