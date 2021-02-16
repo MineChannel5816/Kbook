@@ -57,10 +57,10 @@ function PostActionBar(props) {
       </div>
       <hr className="mx-4 dark:border-gray-300 dark:border-opacity-20" />
       <div className="divActionBar flex justify-around mx-4 my-2 ">
-        <button className="flex font-medium hover:bg-gray-100 rounded-md py-2 px-12 dark:hover:bg-kbook-default focus:outline-none">
+        <button className="flex font-medium hover:bg-gray-100 rounded-md py-2 px-12 dark:hover:bg-kbook-default focus:outline-none transform active:scale-95">
           <Icons.ThumbUpOutline className="mx-2" /> Mi Piace
         </button>
-        <button className="flex font-medium hover:bg-gray-100 rounded-md py-2 px-12 dark:hover:bg-kbook-default focus:outline-none">
+        <button className="flex font-medium hover:bg-gray-100 rounded-md py-2 px-12 dark:hover:bg-kbook-default focus:outline-none transform active:scale-95">
           <Icons.UploadOutline className="mx-2" /> Condividi
         </button>
       </div>
