@@ -19,7 +19,7 @@ function PostHeader(props) {
         </div>
       </div>
       <button className="flex-grow dark:text-white dark:text-opacity-70 mr-2">
-        <Icons.DotsHorizontalOutline className="float-right hover:bg-gray-100 rounded-full h-10 w-10 p-2"></Icons.DotsHorizontalOutline>
+        <Icons.DotsHorizontalOutline className="float-right hover:bg-gray-100 dark:hover:bg-kbook-default dark:text-white text-opacity-50 rounded-full h-10 w-10 p-2"></Icons.DotsHorizontalOutline>
       </button>
     </div>
   );
