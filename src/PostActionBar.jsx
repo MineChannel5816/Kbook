@@ -4,23 +4,23 @@ function returnPostActivity(comments, share) {
   if (comments != null && share != null) {
     return (
       <>
-        <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-90 cursor-pointer hover:underline">
+        <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
           Commenti: {comments}
         </p>
-        <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-90 cursor-pointer hover:underline">
+        <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
           Condivisioni: {share}
         </p>
       </>
     );
   } else if (comments != null) {
     return (
-      <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-90 cursor-pointer hover:underline">
+      <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
         Commenti: {comments}
       </p>
     );
   } else if (share != null) {
     return (
-      <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-90 cursor-pointer hover:underline">
+      <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
         Condivisioni: {share}
       </p>
     );
@@ -38,8 +38,10 @@ function counterActivity(activity) {
   if (sum > 0) {
     return (
       <>
-        <div className="flex cursor-pointer hover:underline">
-          <Icons.ThumbUpOutline /> {sum}
+        <div className="flex-grow my-3">
+          <div className="flex cursor-pointer hover:underline w-12">
+            <Icons.ThumbUpOutline /> {sum}
+          </div>
         </div>
       </>
     );
@@ -50,17 +52,15 @@ function PostActionBar(props) {
   return (
     <div className="divPostActionBar dark:text-white text-black text-opacity-80 dark:text-opacity-75">
       <div className="containerContatori mx-4 flex items-center">
-        <div className="flex-grow">
-          {counterActivity([props.comments, props.share, props.like])}
-        </div>
+        {counterActivity([props.comments, props.share, props.like])}
         <div>{returnPostActivity(props.comments, props.share)}</div>
       </div>
       <hr className="mx-4 dark:border-gray-300 dark:border-opacity-20" />
       <div className="divActionBar flex justify-around mx-4 my-2 ">
-        <button className="flex font-medium">
+        <button className="flex font-medium hover:bg-gray-100 rounded-md py-2 px-12 dark:hover:bg-kbook-default focus:outline-none">
           <Icons.ThumbUpOutline className="mx-2" /> Mi Piace
         </button>
-        <button className="flex font-medium">
+        <button className="flex font-medium hover:bg-gray-100 rounded-md py-2 px-12 dark:hover:bg-kbook-default focus:outline-none">
           <Icons.UploadOutline className="mx-2" /> Condividi
         </button>
       </div>
