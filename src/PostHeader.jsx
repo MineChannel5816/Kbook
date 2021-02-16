@@ -9,8 +9,8 @@ function PostHeader(props) {
         className="rounded-full max-h-10 border border-gray-300 hover:border-gray-500 hover:opacity-95 cursor-pointer"
       />
       <div className="containerInfoPostHeader flex flex-col">
-        <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3 cursor-pointer hover:underline">
-          <p>{props.name}</p>
+        <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
+          <p className="cursor-pointer hover:underline">{props.name}</p>
         </div>
         <div className="divTime flex text-gray-500 font-semibold -mt-1 cursor-pointer hover:underline">
           <p className="ml-3 mx-1">
