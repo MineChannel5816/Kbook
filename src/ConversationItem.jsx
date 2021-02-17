@@ -1,40 +1,39 @@
 import * as Icons from "heroicons-react";
 import { DateTime } from "luxon";
 
-function returnRelative(date) {
-  let dataJs = date;
+function MessageRelativeDay(props) {
+  let dataJs = props.date;
   let dateL = DateTime.fromJSDate(dataJs);
-  let stringDate = dateL.toRelative();
-  return <p className="text-gray-600">{stringDate}</p>;
+  let stringDate = dateL.toRelative({ style: "narrow" });
+  return (
+    <p className="text-gray-600 text-sm">
+      {"·"}
+      {stringDate}
+    </p>
+  );
 }
 
-function returnRead(reading) {
-  if (Number(reading) === 1) {
+function MessageReadIcon(props) {
+  if (props.isRead) {
     return <Icons.Bell className="text-blue-600 m-1" />;
+  } else {
+    return null;
   }
 }
 
-function returnTextRead(reading, message) {
-  if (Number(reading) === 0) {
-    return (
-      <p className="w-44 h-6 overflow-x-hidden overflow-y-hidden text-gray-700">
-        {message}
-      </p>
-    );
+function MessageText(props) {
+  if (!props.isRead) {
+    return <p className="truncate w-44 text-gray-700">{props.lastMessage}</p>;
   } else {
-    return (
-      <p className="w-44 h-6 overflow-x-hidden overflow-y-hidden font-bold">
-        {message}
-      </p>
-    );
+    return <p className="truncate w-44 font-bold">{props.lastMessage}</p>;
   }
 }
 
-function returnNameRead(reading, name) {
-  if (Number(reading) === 0) {
-    return <p className="font-medium">{name}</p>;
+function MessageOwner(props) {
+  if (!props.isRead) {
+    return <p className="font-medium">{props.username}</p>;
   } else {
-    return <p className="font-bold">{name}</p>;
+    return <p className="font-bold">{props.username}</p>;
   }
 }
 
@@ -46,12 +45,16 @@ function ConversationItem(props) {
         alt="ImgProfile"
         className="h-12 w-12 rounded-full m-2 mr-4"
       />
-      <div className="flex flex-col">
-        {returnNameRead(props.isRead, props.name)}
-        {returnTextRead(props.isRead, props.lastMessage)}
+      <div className="flex flex-grow flex-col flex-shrink">
+        <MessageOwner {...props} />
+        <div className="flex items-center">
+          <MessageText {...props} />
+          <MessageRelativeDay date={props.date} />
+        </div>
       </div>
-      <p>{returnRelative(props.date)}</p>
-      {returnRead(props.isRead)}
+      <div className="w-8 float-right right-0">
+        <MessageReadIcon {...props} />
+      </div>
     </div>
   );
 }
