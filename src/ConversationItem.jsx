@@ -9,7 +9,7 @@ function returnRelative(date) {
 }
 
 function returnRead(Reading) {
-  if (Number(Reading) === 0) {
+  if (Number(Reading) === 1) {
     return <Icons.Bell className="text-blue-600 m-1" />;
   }
 }
