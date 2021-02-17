@@ -39,7 +39,7 @@ function MessageOwner(props) {
 
 function ConversationItem(props) {
   return (
-    <div className="flex items-center max-h-14 w-full m-1 cursor-pointer hover:bg-gray-200 rounded-md">
+    <div className="flex items-center max-h-14 w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 rounded-md">
       <img
         src={props.imgProfile}
         alt="ImgProfile"
@@ -49,7 +49,7 @@ function ConversationItem(props) {
         <MessageOwner {...props} />
         <div className="flex items-center">
           <MessageText {...props} />
-          <MessageRelativeDay date={props.date} />
+          <MessageRelativeDay {...props} />
         </div>
       </div>
       <div className="w-8 float-right right-0">

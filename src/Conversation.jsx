@@ -1,5 +1,6 @@
 import ConversationItem from "./ConversationItem";
 import faker from "faker";
+//faker.locale = "it";
 
 function Conversation() {
   let comments = [
@@ -203,7 +204,7 @@ function Conversation() {
   ];
 
   return (
-    <div className="h-full max-w-sm bg-gray-50 flex flex-col relative overflow-y-scroll p-2 pl-0">
+    <div className="h-full w-full max-w-sm flex flex-col absolute overflow-y-scroll overflow-x-hidden top-0 ">
       <hr className="mx-2" />
       {comments.map((comment, i) => {
         return <ConversationItem key={i} {...comment}></ConversationItem>;
