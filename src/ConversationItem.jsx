@@ -6,7 +6,7 @@ function MessageRelativeDay(props) {
   let dateL = DateTime.fromJSDate(dataJs);
   let stringDate = dateL.toRelative({ style: "narrow" });
   return (
-    <p className="text-gray-600 text-sm">
+    <p className="text-gray-600 dark:text-gray-500 text-sm">
       {"·"}
       {stringDate}
     </p>
@@ -23,23 +23,31 @@ function MessageReadIcon(props) {
 
 function MessageText(props) {
   if (!props.isRead) {
-    return <p className="truncate w-44 text-gray-700">{props.lastMessage}</p>;
+    return (
+      <p className="truncate w-44 text-gray-700 dark:text-white">
+        {props.lastMessage}
+      </p>
+    );
   } else {
-    return <p className="truncate w-44 font-bold">{props.lastMessage}</p>;
+    return (
+      <p className="truncate w-44 font-bold dark:text-blue-500">
+        {props.lastMessage}
+      </p>
+    );
   }
 }
 
 function MessageOwner(props) {
   if (!props.isRead) {
-    return <p className="font-medium">{props.username}</p>;
+    return <p className="font-medium dark:text-white">{props.username}</p>;
   } else {
-    return <p className="font-bold">{props.username}</p>;
+    return <p className="font-bold dark:text-white">{props.username}</p>;
   }
 }
 
 function ConversationItem(props) {
   return (
-    <div className="flex items-center max-h-14 w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 rounded-md">
+    <div className="flex items-center max-h-14 w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-kbook-default2 rounded-md">
       <img
         src={props.imgProfile}
         alt="ImgProfile"

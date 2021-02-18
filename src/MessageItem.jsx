@@ -10,7 +10,7 @@ function SetMessage(props) {
         <div
           className={`flex flex-col rounded-2xl p-2 px-3 leading-tight flex-shrink-2 ${
             props.direction === "received"
-              ? "bg-gray-400 bg-opacity-90 text-black"
+              ? "bg-gray-400 dark:bg-gray-400 dark:bg-opacity-40 bg-opacity-90 text-black dark:text-white"
               : "bg-blue-500 text-white"
           }`}
           onClick={() => setIsShown(!isShown)}
@@ -43,7 +43,7 @@ function SetMessage(props) {
         <div
           className={`flex flex-col rounded-2xl p-2 px-3 leading-tight flex-shrink-2 ${
             props.direction === "received"
-              ? "bg-gray-400 bg-opacity-90 text-black"
+              ? "bg-gray-400 dark:bg-black bg-opacity-90 text-black"
               : "bg-blue-500 text-white"
           }`}
           onClick={() => setIsShown(!isShown)}

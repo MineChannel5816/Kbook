@@ -204,12 +204,12 @@ function Conversation() {
   ];
 
   return (
-    <div className="h-full w-full max-w-sm flex flex-col absolute overflow-y-scroll overflow-x-hidden top-0 ">
-      <hr className="mx-2" />
+    <div className="h-full w-full max-w-sm flex flex-col absolute overflow-y-scroll overflow-x-hidden top-0 dark:bg-kbook-default ">
+      <hr className="mx-2 my-0.5 dark:border-white dark:border-opacity-30" />
       {comments.map((comment, i) => {
         return <ConversationItem key={i} {...comment}></ConversationItem>;
       })}
-      <hr className="mx-2" />
+      <hr className="mx-2 my-0.5 dark:border-white dark:border-opacity-30" />
     </div>
   );
 }
