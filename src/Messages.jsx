@@ -54,6 +54,20 @@ let messages = [
     readAt: faker.date.past(),
     body: faker.lorem.sentences(),
   },
+  {
+    direction: faker.random.arrayElement(["received", "sent"]),
+    sentAt: faker.date.past(),
+    receivedAt: faker.date.past(),
+    readAt: faker.date.past(),
+    body: faker.lorem.sentences(),
+  },
+  {
+    direction: faker.random.arrayElement(["received", "sent"]),
+    sentAt: faker.date.past(),
+    receivedAt: faker.date.past(),
+    readAt: faker.date.past(),
+    body: faker.lorem.sentences(),
+  },
 ];
 
 function MessageDateReception(props) {
@@ -67,7 +81,7 @@ function MessageDateReception(props) {
 
 function Messages(props) {
   return (
-    <div className="h-full flex flex-col-reverse absolute ml-96 bg-gray-100 bottom-0 right-0 left-0">
+    <div className="h-full flex flex-col-reverse absolute ml-96 bg-gray-100 bottom-0 right-0 left-0 overflow-auto">
       {messages.map((message, i) => {
         return (
           <div
