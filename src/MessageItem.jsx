@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import faker from "faker";
 import * as Icons from "heroicons-react";
 
 function SetMessage(props) {
@@ -55,10 +55,25 @@ function SetMessage(props) {
   }
 }
 
+function SetPhoto(props) {
+  if (props.direction === "received") {
+    return (
+      <img
+        src={faker.image.imageUrl(35, 35, null, true)}
+        className="rounded-full  mr-3 mb-0"
+        alt=""
+      />
+    );
+  } else {
+    return null;
+  }
+}
+
 function MessageItem(props) {
   return (
     <div className="flex flex-col items-center m-2 mt-0 mb-8 max-w-2xl">
-      <div className="flex items-center">
+      <div className="flex items-end">
+        <SetPhoto {...props} />
         <SetMessage {...props} />
       </div>
     </div>
