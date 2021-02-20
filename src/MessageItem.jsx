@@ -59,7 +59,7 @@ function SetPhoto(props) {
   if (props.direction === "received") {
     return (
       <img
-        src={faker.image.imageUrl(35, 35, null, true)}
+        src={faker.image.imageUrl(35, 35)}
         className="rounded-full  mr-3 mb-0"
         alt=""
       />
