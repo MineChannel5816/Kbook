@@ -1,3 +1,5 @@
+import Messages from "./Messages";
+
 import * as Icons from "heroicons-react";
 import { DateTime } from "luxon";
 
@@ -45,15 +47,16 @@ function MessageOwner(props) {
   }
 }
 
-function click() {
-  console.log("Click!");
+function click(props) {
+  console.log(props);
+  return <Messages {...props} />;
 }
 
 function ConversationItem(props) {
   return (
     <div
       className="flex items-center w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-kbook-default2 rounded-md"
-      onClick={() => click()}
+      onClick={() => click(props)}
     >
       <img
         src={props.imgProfile}

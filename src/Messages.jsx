@@ -1,74 +1,8 @@
 import MessageItem from "./MessageItem";
 
+import classNames from "classnames";
 import { DateTime } from "luxon";
-import faker from "faker";
 //faker.locale = "it";
-
-let messages = [
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-  {
-    direction: faker.random.arrayElement(["received", "sent"]),
-    sentAt: faker.date.past(),
-    receivedAt: faker.date.past(),
-    readAt: faker.date.past(),
-    body: faker.lorem.sentences(),
-  },
-];
 
 function MessageDateReception(props) {
   let dataJs = props.receivedAt;
@@ -80,17 +14,18 @@ function MessageDateReception(props) {
 }
 
 function Messages(props) {
+  console.log(props.data);
   return (
-    <div className="h-full flex flex-col-reverse absolute ml-96 bg-gray-100 dark:bg-kbook-default2 bottom-0 right-0 left-0 overflow-auto">
-      {messages.map((message, i) => {
+    <div className="h-screen flex-grow flex flex-col-reverse bg-gray-100 dark:bg-kbook-default2 overflow-auto">
+      {props.data.map((message, i) => {
+        let direzioni = classNames("flex", "flex-col ", {
+          "items-start": message.direction === "received",
+          "items-end": message.direction !== "received",
+        });
         return (
-          <div
-            className={`flex flex-col  ${
-              message.direction === "received" ? "items-start" : "items-end"
-            }`}
-          >
+          <div key={i} className={direzioni}>
             <MessageDateReception {...message} />
-            <MessageItem key={i} {...message} />
+            <MessageItem {...message} />
           </div>
         );
       })}
