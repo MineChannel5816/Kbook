@@ -52,7 +52,7 @@ function click() {
 function ConversationItem(props) {
   return (
     <div
-      className="flex items-center max-h-14 w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-kbook-default2 rounded-md"
+      className="flex items-center w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-kbook-default2 rounded-md"
       onClick={() => click()}
     >
       <img
