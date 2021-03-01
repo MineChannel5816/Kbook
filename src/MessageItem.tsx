@@ -2,7 +2,9 @@ import faker from "faker";
 import * as Icons from "heroicons-react";
 import classNames from "classnames";
 
-function SetMessage(props) {
+import type { Message } from "./App2";
+
+function SetMessage(props: Message) {
   let classes =
     "rounded-full p-0.5 m-0.5 text-gray-400 hover:bg-gray-500 hover:bg-opacity-20";
 
@@ -40,7 +42,7 @@ function SetMessage(props) {
   }
 }
 
-function SetPhoto(props) {
+function SetPhoto(props: Message) {
   if (props.direction === "received") {
     return (
       <img
@@ -54,15 +56,15 @@ function SetPhoto(props) {
   }
 }
 
-function SetIcon(props) {
+function SetIcon(props: Message) {
   if (props.direction === "sent") {
-    return <Icons.CheckCircle className="rounded-full h-6 w-6" alt="" />;
+    return <Icons.CheckCircle className="rounded-full h-6 w-6" />;
   } else {
     return null;
   }
 }
 
-function MessageItem(props) {
+function MessageItem(props: Message) {
   return (
     <div className="flex flex-col items-center m-2 max-w-2xl">
       <div className="flex items-end">

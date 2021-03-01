@@ -1,39 +1,34 @@
 import * as Icons from "heroicons-react";
 
-function returnPostActivity(comments, share) {
-  if (comments != null && share != null) {
+function returnPostActivity(props: P) {
+  if (props.comments != null && props.share != null) {
     return (
       <>
         <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
-          Commenti: {comments}
+          Commenti: {props.comments}
         </p>
         <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
-          Condivisioni: {share}
+          Condivisioni: {props.share}
         </p>
       </>
     );
-  } else if (comments != null) {
+  } else if (props.comments != null) {
     return (
       <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
-        Commenti: {comments}
+        Commenti: {props.comments}
       </p>
     );
-  } else if (share != null) {
+  } else if (props.share != null) {
     return (
       <p className="float-right my-3 mx-2 text-black dark:text-white text-opacity-90 dark:text-opacity-80 cursor-pointer hover:underline">
-        Condivisioni: {share}
+        Condivisioni: {props.share}
       </p>
     );
   }
 }
 
-function counterActivity(activity) {
-  let sum = 0;
-  activity.forEach((element) => {
-    if (element != null) {
-      sum += Number(element);
-    }
-  });
+function counterActivity(props: P) {
+  let sum = Number(props.comments) + Number(props.like) + Number(props.share);
 
   if (sum > 0) {
     return (
@@ -48,12 +43,18 @@ function counterActivity(activity) {
   }
 }
 
-function PostActionBar(props) {
+interface P {
+  comments: number;
+  share: number;
+  like: number;
+}
+
+function PostActionBar(props: P) {
   return (
     <div className="divPostActionBar dark:text-white text-black text-opacity-80 dark:text-opacity-75">
       <div className="containerContatori mx-4 flex items-center">
-        {counterActivity([props.comments, props.share, props.like])}
-        <div>{returnPostActivity(props.comments, props.share)}</div>
+        {counterActivity(props)}
+        <div>{returnPostActivity(props)}</div>
       </div>
       <hr className="mx-4 dark:border-gray-300 dark:border-opacity-20" />
       <div className="divActionBar flex justify-around mx-4 my-2 ">

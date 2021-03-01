@@ -1,5 +1,10 @@
 import * as Icons from "heroicons-react";
-function PostPersonalComment(props) {
+
+interface P {
+  imgProfile: string;
+}
+
+function PostPersonalComment(props: P) {
   return (
     <div className="divPostPersonalComment flex items-center m-1">
       <img

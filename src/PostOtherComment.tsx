@@ -1,4 +1,6 @@
-function PostOtherComment(props) {
+import type { Comment } from "./PostComments";
+
+function PostOtherComment(props: Comment) {
   return (
     <div className="divPostOtherComment flex items-start m-2 dark:text-white dark:text-opacity-80">
       <img

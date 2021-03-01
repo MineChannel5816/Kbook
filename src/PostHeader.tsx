@@ -1,6 +1,13 @@
 import * as Icons from "heroicons-react";
 
-function PostHeader(props) {
+interface P {
+  username: string;
+  clock: Date;
+  date: Date;
+  imgProfile: string;
+}
+
+function PostHeader(props: P) {
   return (
     <div className="divPostHeader flex items-center p-4 max-h-16">
       <img
@@ -11,7 +18,7 @@ function PostHeader(props) {
       <div className="containerInfoPostHeader flex flex-col">
         <div className="flex">
           <div className="divNomePostHeader dark:text-white dark:text-opacity-80 font-bold mx-3">
-            <p className="cursor-pointer hover:underline">{props.name}</p>
+            <p className="cursor-pointer hover:underline">{props.username}</p>
           </div>
         </div>
 

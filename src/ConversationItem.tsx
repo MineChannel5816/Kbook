@@ -1,10 +1,10 @@
-import Messages from "./Messages";
-
 import * as Icons from "heroicons-react";
 import { DateTime } from "luxon";
 
-function MessageRelativeDay(props) {
-  let dataJs = props.date;
+import type { Conversation } from "./App2";
+
+function MessageRelativeDay(props: P) {
+  let dataJs = props.conversation.date;
   let dateL = DateTime.fromJSDate(dataJs);
   let stringDate = dateL.toRelative({ style: "narrow" });
   return (
@@ -15,52 +15,60 @@ function MessageRelativeDay(props) {
   );
 }
 
-function MessageReadIcon(props) {
-  if (props.isRead) {
+function MessageReadIcon(props: P) {
+  if (props.conversation.isRead) {
     return <Icons.Bell className="text-blue-600 m-1" />;
   } else {
     return null;
   }
 }
 
-function MessageText(props) {
-  if (!props.isRead) {
+function MessageText(props: P) {
+  if (!props.conversation.isRead) {
     return (
       <p className="truncate w-44 text-gray-700 dark:text-white">
-        {props.lastMessage}
+        {props.conversation.lastMessage}
       </p>
     );
   } else {
     return (
       <p className="truncate w-44 font-bold dark:text-blue-500">
-        {props.lastMessage}
+        {props.conversation.lastMessage}
       </p>
     );
   }
 }
 
-function MessageOwner(props) {
-  if (!props.isRead) {
-    return <p className="font-medium dark:text-white">{props.username}</p>;
+function MessageOwner(props: P) {
+  if (!props.conversation.isRead) {
+    return (
+      <p className="font-medium dark:text-white">
+        {props.conversation.username}
+      </p>
+    );
   } else {
-    return <p className="font-bold dark:text-white">{props.username}</p>;
+    return (
+      <p className="font-bold dark:text-white">{props.conversation.username}</p>
+    );
   }
 }
 
-function click(props) {
-  console.log(props);
-  return <Messages {...props} />;
+interface P {
+  conversation: Conversation;
+  onClick: (chat: Conversation) => void;
 }
 
-function ConversationItem(props) {
+function ConversationItem(props: P) {
+  console.log(props.onClick);
   return (
     <div
       className="flex items-center w-full max-w-sm m-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-kbook-default2 rounded-md"
-      onClick={() => click(props)}
+      onClick={() => props.onClick(props.conversation)}
     >
       <img
-        src={props.imgProfile}
+        src={props.conversation.imgProfile}
         alt="ImgProfile"
+        loading="lazy"
         className="h-12 w-12 rounded-full m-2 mr-4"
       />
       <div className="flex flex-grow flex-col flex-shrink">
